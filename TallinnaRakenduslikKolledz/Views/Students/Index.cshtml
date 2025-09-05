@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TallinnaRakenduslikKolledz.Models.Student>
+@{
+	ViewData["Title"] = "Õpilased";
+}
+<h1>Õpilaste Loend</h1>
+<p>
+	<a asp-action="Create">Sisesta Õpilane</a>
+</p>
+<Table class="table">
+	<thead>
+		<th>
+			@Html.DisplayNameFor(Model => Model.LastName)
+		</th>
+		<th>
+			@Html.DisplayNameFor(Model => Model.FirstName)
+		</th>
+		<th>
+			@Html.DisplayNameFor(Model => Model.EnrollmentDate)
+		</th>
+		<th>
+			@Html.DisplayNameFor(Model => Model.Email)
+		</th>
+		<th>
+			Tööristad
+		</th>
+	</thead>
+</Table>
+<tbody>
+	@foreach(var student in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelitem => student.LastName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelitem => student.FirstName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelitem => student.EnrollmentDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelitem => student.Email)
+			</td>
+			<td>
+				<a asp-action="Edit" asp-route-id="@student.Id">Muuda</a>
+				<a asp-action="Details" asp-route-id="@student.Id">Vaata</a>
+				<a asp-action="Delete" asp-route-id="@student.Id">Kustuta</a>
+			</td>
+		</tr>
+	}
+</tbody>
