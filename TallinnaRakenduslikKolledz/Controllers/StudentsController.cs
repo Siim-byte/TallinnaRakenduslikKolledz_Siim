@@ -6,13 +6,14 @@ using TallinnaRakenduslikKolledz.Models;
 
 namespace TallinnaRakenduslikKolledz.Controllers
 {
-    public class StudentsControllers : Controller
+    public class StudentsController : Controller
     {
         private readonly SchoolContext _context;
-        public StudentsControllers(SchoolContext context) 
+        public StudentsController(SchoolContext context) 
         {
             _context = context;
         }
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Students.ToListAsync());
@@ -26,9 +27,8 @@ namespace TallinnaRakenduslikKolledz.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID, LastName, FirstName, EnrollmentDate")] Student student)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-
                 _context.Students.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");

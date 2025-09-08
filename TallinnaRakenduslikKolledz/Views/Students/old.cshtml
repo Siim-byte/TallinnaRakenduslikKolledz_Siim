@@ -1,5 +1,4 @@
-﻿
-@model IEnumerable<TallinnaRakenduslikKolledz.Models.Student>
+﻿@model IEnumerable<TallinnaRakenduslikKolledz.Models.Student>
 @{
 	ViewData["Title"] = "Õpilased";
 }
@@ -9,25 +8,25 @@
 </p>
 <Table class="table">
 	<thead>
-	<th>
+		<th>
 			@Html.DisplayNameFor(Model => Model.LastName)
-	</th>
-	<th>
+		</th>
+		<th>
 			@Html.DisplayNameFor(Model => Model.FirstName)
-	</th>
-	<th>
+		</th>
+		<th>
 			@Html.DisplayNameFor(Model => Model.EnrollmentDate)
-	</th>
-	<th>
+		</th>
+		<th>
 			@Html.DisplayNameFor(Model => Model.Email)
-	</th>
-	<th>
-		Tööristad
-	</th>
+		</th>
+		<th>
+			Tööristad
+		</th>
 	</thead>
 </Table>
 <tbody>
-	@foreach (var student in Model)
+	@foreach(var student in Model)
 	{
 		<tr>
 			<td>
