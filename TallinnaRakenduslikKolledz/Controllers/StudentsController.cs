@@ -36,8 +36,30 @@ namespace TallinnaRakenduslikKolledz.Controllers
             }
             return View(student);
         }
-    
-     [HttpGet]
+        [HttpGet]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var student = await _context.Students.FirstOrDefaultAsync(m => m.Id == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
+        /**/
+
+
+        /// <summary>
+        /// Get delete view for student
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+
+        [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
