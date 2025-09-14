@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TallinnaRakenduslikKolledz.Data;
@@ -25,7 +25,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID, LastName, FirstName, EnrollmentDate")] Student student)
+        public async Task<IActionResult> Create([Bind("Id, LastName, FirstName, EnrollmentDate")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -37,19 +37,34 @@ namespace TallinnaRakenduslikKolledz.Controllers
             return View(student);
         }
         
+     
         [HttpGet]
-        public IActionResult EditConfirmed()
+        public async Task<IActionResult> EditConfirmed(int? id)
         {
-            return View();
-        }
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var student = await _context.Students.FindAsync(id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return View(student);
+        }
         [HttpPost, ActionName("EditConfirmed")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditConfirmed([Bind("ID, LastName, FirstName, EnrollmentDate")] Student student)
+        public async Task<IActionResult> EditConfirmed(int id, [Bind("Id,LastName,FirstName,EnrollmentDate")] Student student)
         {
+            if (id != student.Id)
+            {
+                return NotFound();
+            }
             if (ModelState.IsValid)
             {
-                _context.Students.Add(student);
+                _context.Students.Update(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
                 // return RedirectToAction(nameof(Index))
