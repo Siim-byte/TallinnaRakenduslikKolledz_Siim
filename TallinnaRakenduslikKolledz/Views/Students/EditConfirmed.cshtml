@@ -1,4 +1,4 @@
-﻿@model TallinnaRakenduslikKolledz.Models.Student
+@model TallinnaRakenduslikKolledz.Models.Student
 
 @{
 	ViewData["Title"] = "Loo uus õpilane";
@@ -10,6 +10,7 @@
 	<div class="col-md-4">
 		<form asp-action="EditConfirmed">
 			<div asp-validation-summary="ModelOnly" class="=text-danger"></div>
+			<input asp-for="Id" type="hidden" />
 			<div class="form-group">
 				<label asp-for="LastName" class="control-label"></label>
 				<input asp-for="LastName" class="form-control" />
