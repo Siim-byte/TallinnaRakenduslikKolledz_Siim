@@ -16,7 +16,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
         {
             var vm = new InstructorIndexData();
             vm.Instructors = await _context.Instructors
-                .Include(i => i.OfficeAssignments)
+                .Include(i => i.OfficeAssignment)
                 .Include(i => i.CourseAssignments)
                 .ToListAsync();
             return View(vm);
