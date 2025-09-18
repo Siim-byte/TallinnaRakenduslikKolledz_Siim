@@ -110,7 +110,7 @@ namespace TallinnaRakenduslikKolledz.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime>("HiredDate")
+                    b.Property<DateTime>("HirdeDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")

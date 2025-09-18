@@ -19,7 +19,7 @@ namespace TallinnaRakenduslikKolledz.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    HiredDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HirdeDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Salary = table.Column<int>(type: "int", nullable: true),
                     RoomID = table.Column<int>(type: "int", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
