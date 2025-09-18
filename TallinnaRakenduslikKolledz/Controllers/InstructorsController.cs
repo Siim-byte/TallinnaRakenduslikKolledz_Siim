@@ -33,33 +33,37 @@ namespace TallinnaRakenduslikKolledz.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Instructor instructor, string selectedCourses)
+        public async Task<IActionResult> Create(Instructor instructor, int[] selectedCourses)
         {
-            if (selectedCourses == null)
+            instructor.CourseAssignments = new List<CourseAssignment>();
+
+            if (selectedCourses != null)
             {
-                instructor.CourseAssignments = new List<CourseAssignment>();
-                foreach (var course in selectedCourses)
+                foreach (var courseId in selectedCourses)
                 {
-                    var courseToAdd = new CourseAssignment()
+                    instructor.CourseAssignments.Add(new CourseAssignment
                     {
-                        InstructorID = instructor.ID,
-                        CourseID = course
-                    };
-                    instructor.CourseAssignments.Add(courseToAdd);
+                        CourseID = courseId,
+                        InstructorID = instructor.ID
+                    });
                 }
             }
+
             if (ModelState.IsValid)
             {
                 _context.Add(instructor);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
+
             PopulateAssignedCourseData(instructor);
             return View(instructor);
         }
+
         private void PopulateAssignedCourseData(Instructor instructor)
         {
             var allCourses = _context.Courses; //leiame koik kursused
+
             var instructorCourses = new HashSet<int>(instructor.CourseAssignments.Select(c => c.CourseID));
             // valime kursused kus courseid on opetajal olemas
             var vm = new List<AssignedCourseData>();
@@ -72,7 +76,8 @@ namespace TallinnaRakenduslikKolledz.Controllers
                     Assigned = instructorCourses.Contains(course.CourseID)
                 });
             }
-            ViewData("Courses") = vm;
+            ViewData["Courses"] = vm;
+
         }
     }
 }
