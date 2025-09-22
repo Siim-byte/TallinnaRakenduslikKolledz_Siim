@@ -1,0 +1,50 @@
+﻿@model TallinnaRakenduslikKolledz.Models.Instructor
+
+@{
+	ViewData["Title"] = "Õpetaja vaade";
+}
+
+<h1>Õpetaja vaade</h1>
+
+<div>
+	<h4>Õpetaja @Model.FirstName @Model.LastName</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.LastName)</dt>
+		<dd class="col-sm-10">@Html.DisplayFor(model => model.LastName)</dd>
+	</dl>
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.FirstName)</dt>
+		<dd class="col-sm-10">@Html.DisplayFor(model => model.FirstName)</dd>
+	</dl>
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.HirdeDate)</dt>
+		<dd class="col-sm-10">@Html.DisplayFor(model => model.HirdeDate)</dd>
+	</dl>
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Salary)</dt>
+		<dd class="col-sm-10">@Html.DisplayFor(model => model.Salary)</dd>
+	</dl>
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.RoomID)</dt>
+		<dd class="col-sm-10">@Html.DisplayFor(model => model.RoomID)</dd>
+	</dl>
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Email)</dt>
+		<dd class="col-sm-10">@Html.DisplayFor(model => model.Email)</dd>
+	</dl>
+
+	@if (Model.CourseAssignments != null)
+	{
+		foreach (var courseAssignment in Model.CourseAssignments)
+		{
+			<dl class="row">
+				<dd class="col-sm-10">@(courseAssignment)</dd>
+			</dl>
+		}
+	}
+	
+</div>
+<div>
+	<a asp-action="Index">Mine tagasi loendisse</a>
+</div>
