@@ -2,29 +2,35 @@
 @{
 	ViewData["Title"] = "Kustuta õpetaja";
 }
-<h1>Kustuta Õpetja</h1>
-<h3>Kas soovid kustutada @Html.DisplayFor(Model => Model.FullName)</h3>
+<h1>Kustuta Õpetaja</h1>
+<h3>Kas soovid kustudada õpetaja</h3>
 <div>
-	<h4>Õpetaja</h4>
+	<h4>@Html.DisplayFor(Model => Model.FullName)</h4>
 	<hr />
 	<dl class="row">
-		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.LastName)</dt>
-		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.LastName)</dt>
-		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.FirstName)</dt>
-		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.FirstName)</dt>
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.LastName)</dt>
+		<dd class="col-sm-10">@Html.DisplayFor(model => model.LastName)</dd>		
+	</dl>
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.FirstName)</dt>
+		<dd class="col-sm-10">@Html.DisplayFor(model => model.FirstName)</dd>		
+	</dl>
+	<dl class="row">
 		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.HirdeDate)</dt>
 		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.HirdeDate)</dt>
+	</dl>
+	<dl class="row">
 		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.Salary)</dt>
 		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Salary)</dt>
+	</dl>
+	<dl class="row">
 		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.RoomID)</dt>
 		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.RoomID)</dt>
+	</dl>
+	<dl class="row">
 		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.Email)</dt>
 		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Email)</dt>
-		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.OfficeAssignment)</dt>
-		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.OfficeAssignment)</dt>
-		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.CourseAssignments)</dt>
-		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.CourseAssignments)</dt>
-		
+	</dl>
 
 
 
