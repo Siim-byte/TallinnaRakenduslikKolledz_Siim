@@ -41,6 +41,8 @@
 				@Html.DisplayFor(modelItem => course.Department.Administrator.FullName)
 			</tr>
 			<tr>
+				<a asp-action="Edit" asp-route-id="@course.CourseID">Muuda</a>
+				<a asp-action="Details" asp-route-id="@course.CourseID">Vaata</a>
 				<a asp-action="Delete" asp-route-id="@course.CourseID">Kustuta</a>
 			</tr>
 

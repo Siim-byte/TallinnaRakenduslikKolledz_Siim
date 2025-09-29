@@ -12,7 +12,7 @@ using TallinnaRakenduslikKolledz.Data;
 namespace TallinnaRakenduslikKolledz.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20250929102004_init")]
+    [Migration("20250929111008_init")]
     partial class init
     {
         /// <inheritdoc />

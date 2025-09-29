@@ -14,6 +14,9 @@
 			<th>@Html.DisplayNameFor(model => model.StartDate)</th>
 			<th>@Html.DisplayNameFor(model => model.Administrator)</th>
 			<th>@Html.DisplayNameFor(model => model.RowVersion)</th>
+			<th>@Html.DisplayNameFor(model => model.Quota)</th>
+			<th>@Html.DisplayNameFor(model => model.LeaderName)</th>
+			<th>@Html.DisplayNameFor(model => model.Pet)</th>
 			<th>Tööriistad</th>
 		</tr>
 	</thead>
@@ -26,6 +29,9 @@
 					<td>@Html.DisplayFor(modelItem => department.StartDate)</td>
 					<td>@Html.DisplayFor(modelItem => department.Administrator)</td>
 					<td>@Html.DisplayFor(modelItem => department.RowVersion)</td>
+					<td>@Html.DisplayFor(modelItem => department.Quota)</td>
+					<td>@Html.DisplayFor(modelItem => department.LeaderName)</td>
+					<td>@Html.DisplayFor(modelItem => department.Pet)</td>
 					<td>
 					@*/* Muuda */*@
 
@@ -34,6 +40,8 @@
 					@*/* Vaata Adminit */*@
 
 					@*/* Kustuta */*@
+					<a asp-action="Edit" asp-route-id="@department.DepartmentID" class="btn btn-danger">Muuda</a>
+					<a asp-action="Details" asp-route-id="@department.DepartmentID" class="btn btn-danger">Vaata</a>
 					<a asp-action="Delete" asp-route-id="@department.DepartmentID" class="btn btn-danger">Eemalda</a>
 					</td>
 			</tr>

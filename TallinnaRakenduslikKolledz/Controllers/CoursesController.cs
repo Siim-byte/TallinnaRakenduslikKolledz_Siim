@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TallinnaRakenduslikKolledz.Data;
 using TallinnaRakenduslikKolledz.Data;
+using TallinnaRakenduslikKolledz.Models;
 
 namespace TallinnaRakenduslikKolllež.Controllers
 {
@@ -25,6 +26,19 @@ namespace TallinnaRakenduslikKolllež.Controllers
         {
             PopulateDepartmentsDropDownList();
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                 _context.Add(course);
+                await _context.SaveChangesAsync();
+                PopulateDepartmentsDropDownList(course.DepartmentID);
+            }
+            return RedirectToAction("Index");
+
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
