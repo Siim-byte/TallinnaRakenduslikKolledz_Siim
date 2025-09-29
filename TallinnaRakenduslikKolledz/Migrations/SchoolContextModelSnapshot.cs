@@ -221,15 +221,17 @@ namespace TallinnaRakenduslikKolledz.Migrations
 
             modelBuilder.Entity("TallinnaRakenduslikKolledz.Models.Course", b =>
                 {
-                    b.HasOne("TallinnaRakenduslikKolledz.Models.Department", null)
+                    b.HasOne("TallinnaRakenduslikKolledz.Models.Department", "Department")
                         .WithMany("Courses")
                         .HasForeignKey("DepartmentID");
+
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("TallinnaRakenduslikKolledz.Models.CourseAssignment", b =>
                 {
                     b.HasOne("TallinnaRakenduslikKolledz.Models.Course", "Course")
-                        .WithMany()
+                        .WithMany("CourseAssignments")
                         .HasForeignKey("CourseID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -286,6 +288,8 @@ namespace TallinnaRakenduslikKolledz.Migrations
 
             modelBuilder.Entity("TallinnaRakenduslikKolledz.Models.Course", b =>
                 {
+                    b.Navigation("CourseAssignments");
+
                     b.Navigation("Enrollments");
                 });
 
