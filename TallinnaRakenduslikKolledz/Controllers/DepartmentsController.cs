@@ -2,8 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using TallinnaRakenduslikKolledz.Data;
 using TallinnaRakenduslikKolledz.Models;
-using TallinnaRakenduslikKolledz.Data;
-using TallinnaRakenduslikKolledz.Models;
 
 namespace TallinnaRakenduslikKolllež.Controllers
 {
@@ -22,6 +20,56 @@ namespace TallinnaRakenduslikKolllež.Controllers
             return View(await schoolContext.ToListAsync());
         }
         [HttpGet]
+        public IActionResult Create()
+        {
+            ViewData["action"] = "Create";
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Name,Budget,StartDate,RowVersion,Administrator,Quota,LeaderName,Pet")] Department departments)
+        {
+            ViewData["action"] = "Create";
+            if (ModelState.IsValid)
+            {
+                _context.Departments.Add(departments);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+                // return RedirectToAction(nameof(Index))
+            }
+            return View(departments);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var department = await _context.Departments.FirstOrDefaultAsync(x => x.DepartmentID == id);
+            if (department == null)
+            {
+                return NotFound();
+            }
+            ViewData["action"] = "Edit";
+            return View("Create", department);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditConfirmed(int id, [Bind("DepartmentID,Name,Budget,StartDate,RowVersion,Administrator,Quota,LeaderName,Pet")] Department department)
+        {
+            ViewData["action"] = "Edit";
+            if (ModelState.IsValid)
+            {
+                var existing = await _context.Departments.FirstOrDefaultAsync(d => d.DepartmentID == id);
+                _context.Departments.Update(department);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            ViewData["action"] = "Edit";
+            return View("Create", department);
+        }
+        [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -34,7 +82,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
                 return NotFound();
             }
             ViewBag.action = "Delete";
-            return View("DepartmentView", department);
+            return View("Delete", department);
         }
 
         [HttpPost, ActionName("Delete")]
@@ -42,6 +90,10 @@ namespace TallinnaRakenduslikKolllež.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var department = await _context.Departments.FindAsync(id);
+            if (department == null)
+            {
+                return NotFound();
+            }
             _context.Departments.Remove(department);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -60,7 +112,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
                 return NotFound();
             }
             ViewBag.action = "Details";
-            return View("DepartmentView", department);
+            return View("Delete", department);
         }
     }
 }

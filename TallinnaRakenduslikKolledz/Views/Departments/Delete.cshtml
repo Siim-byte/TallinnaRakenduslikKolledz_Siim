@@ -54,11 +54,12 @@ else if (ViewBag.action == "Details")
         </dl>
     @if(ViewBag.action == "Delete")
     {
-        <form asp-action="DeleteConfirmed">
-            <input type="hidden" asp-for="DepartmentID"/>
-            <input type="hidden" asp-for="RowVersion"/>
-            <input type="submit" value="Kustuta" class="btn btn-danger" /> <a asp-action="Index">Tühista</a> 
-        </form>
+         <form asp-action="Delete" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="DepartmentID" />
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+         </form>
     }
     else if (ViewBag.action == "Details")
     {
