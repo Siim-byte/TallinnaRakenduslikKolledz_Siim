@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Siim\\Source\\Repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj": {}
+    "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Siim\\Source\\Repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj": {
+    "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Siim\\Source\\Repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj",
+        "projectUniqueName": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj",
         "projectName": "TallinnaRakenduslikKolledz",
-        "projectPath": "C:\\Users\\Siim\\Source\\Repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj",
+        "projectPath": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj",
         "packagesPath": "C:\\Users\\Siim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Siim\\Source\\Repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\obj\\",
+        "outputPath": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

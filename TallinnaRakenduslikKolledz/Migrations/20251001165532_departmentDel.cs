@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TallinnaRakenduslikKolledz.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class departmentDel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -94,7 +94,7 @@ namespace TallinnaRakenduslikKolledz.Migrations
                 name: "Course",
                 columns: table => new
                 {
-                    CourseID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Credits = table.Column<int>(type: "int", nullable: false),
@@ -102,7 +102,7 @@ namespace TallinnaRakenduslikKolledz.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Course", x => x.CourseID);
+                    table.PrimaryKey("PK_Course", x => x.ID);
                     table.ForeignKey(
                         name: "FK_Course_Department_DepartmentID",
                         column: x => x.DepartmentID,
@@ -126,7 +126,7 @@ namespace TallinnaRakenduslikKolledz.Migrations
                         name: "FK_CourseAssignment_Course_CourseID",
                         column: x => x.CourseID,
                         principalTable: "Course",
-                        principalColumn: "CourseID",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CourseAssignment_Instructor_InstructorID",
@@ -153,7 +153,7 @@ namespace TallinnaRakenduslikKolledz.Migrations
                         name: "FK_Enrollment_Course_CourseID",
                         column: x => x.CourseID,
                         principalTable: "Course",
-                        principalColumn: "CourseID",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Enrollment_Student_StudentID",

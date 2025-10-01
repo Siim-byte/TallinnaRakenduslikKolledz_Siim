@@ -1,0 +1,67 @@
+﻿@model TallinnaRakenduslikKolledz.Models.Department
+
+
+@{
+    ViewData["Title"] = ViewBag.action == "Delete" ? "Kustuta Osakond" : "Osakonna detailid";
+}
+
+<h2>@Html.DisplayFor(modelItem => Model.Name)</h2>
+
+@if (ViewBag.action == "Delete")
+{
+    <p>
+        <h3>Kustuta osakond:</h3>
+    </p>
+}
+else if (ViewBag.action == "Details")
+{
+    <p>
+        <h3>Osakonna detailid</h3>
+    </p>
+}
+<div>
+    <hr />
+        <dl class ="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dt class="col-sm-2">@Html.DisplayFor(model => model.Name)</dt>
+        </dl>
+        <dl>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Budget)</dt>
+        <dt class="col-sm-2">@Html.DisplayFor(model => model.Budget)</dt>
+        </dl>
+        <dl>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.StartDate)</dt>
+        <dt class="col-sm-2">@Html.DisplayFor(model => model.StartDate)</dt>
+        </dl>
+        <dl>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Administrator)</dt>
+        <dt class="col-sm-2">@Html.DisplayFor(model => model.Administrator)</dt>
+        </dl>
+        <dl>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.RowVersion)</dt>
+        <dt class="col-sm-2">@Html.DisplayFor(model => model.RowVersion)</dt>
+        </dl>
+        <dl>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Quota)</dt>
+        <dt class="col-sm-2">@Html.DisplayFor(model => model.Quota)</dt>
+        </dl>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.LeaderName)</dt>
+        <dt class="col-sm-2">@Html.DisplayFor(model => model.LeaderName)</dt>
+        </dl>
+        <dl>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Pet)</dt>
+        <dt class="col-sm-2">@Html.DisplayFor(model => model.Pet)</dt>
+        </dl>
+    @if(ViewBag.action == "Delete")
+    {
+        <form asp-action="DeleteConfirmed">
+            <input type="hidden" asp-for="DepartmentID"/>
+            <input type="hidden" asp-for="RowVersion"/>
+            <input type="submit" value="Kustuta" class="btn btn-danger" /> <a asp-action="Index">Tühista</a> 
+        </form>
+    }
+    else if (ViewBag.action == "Details")
+    {
+        <a asp-action="Index">Mine tagasi</a>
+    }
+</div>

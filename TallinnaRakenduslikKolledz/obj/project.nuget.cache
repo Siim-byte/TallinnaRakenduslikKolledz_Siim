@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xtef7dSFqas=",
+  "dgSpecHash": "l9UfPVQA2GU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Siim\\Source\\Repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj",
+  "projectFilePath": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Siim\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Siim\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

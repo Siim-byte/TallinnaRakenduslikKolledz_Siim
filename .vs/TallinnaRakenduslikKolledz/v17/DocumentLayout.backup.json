@@ -1,21 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\",
+  "WorkspaceRootPath": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\source\\repos\\ttallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\documents\\github\\tallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\views\\departments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|solutionrelative:tallinnarakenduslikkolledz\\views\\departments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\documents\\github\\tallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|solutionrelative:tallinnarakenduslikkolledz\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\source\\repos\\ttallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\documents\\github\\tallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|solutionrelative:tallinnarakenduslikkolledz\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\source\\repos\\ttallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\documents\\github\\tallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|solutionrelative:tallinnarakenduslikkolledz\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\source\\repos\\ttallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|c:\\users\\siim\\documents\\github\\tallinnarakenduslikkolledz_siim\\tallinnarakenduslikkolledz\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{26AB1A60-64FF-42C8-9115-7EC25EF98CF1}|TallinnaRakenduslikKolledz\\TallinnaRakenduslikKolledz.csproj|solutionrelative:tallinnarakenduslikkolledz\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -67,23 +71,36 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Views\\Departments\\Delete.cshtml",
+              "RelativeDocumentMoniker": "TallinnaRakenduslikKolledz\\Views\\Departments\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Views\\Departments\\Delete.cshtml",
+              "RelativeToolTip": "TallinnaRakenduslikKolledz\\Views\\Departments\\Delete.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-01T16:04:35.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DepartmentsController.cs",
-              "DocumentMoniker": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Controllers\\DepartmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Controllers\\DepartmentsController.cs",
               "RelativeDocumentMoniker": "TallinnaRakenduslikKolledz\\Controllers\\DepartmentsController.cs",
-              "ToolTip": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Controllers\\DepartmentsController.cs",
+              "ToolTip": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Controllers\\DepartmentsController.cs",
               "RelativeToolTip": "TallinnaRakenduslikKolledz\\Controllers\\DepartmentsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-01T15:43:50.983Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Models\\Department.cs",
+              "DocumentMoniker": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Models\\Department.cs",
               "RelativeDocumentMoniker": "TallinnaRakenduslikKolledz\\Models\\Department.cs",
-              "ToolTip": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Models\\Department.cs",
+              "ToolTip": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Models\\Department.cs",
               "RelativeToolTip": "TallinnaRakenduslikKolledz\\Models\\Department.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -91,11 +108,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Views\\Courses\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Views\\Courses\\Index.cshtml",
               "RelativeDocumentMoniker": "TallinnaRakenduslikKolledz\\Views\\Courses\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Views\\Courses\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Views\\Courses\\Index.cshtml",
               "RelativeToolTip": "TallinnaRakenduslikKolledz\\Views\\Courses\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -103,11 +120,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CoursesController.cs",
-              "DocumentMoniker": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Controllers\\CoursesController.cs",
+              "DocumentMoniker": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Controllers\\CoursesController.cs",
               "RelativeDocumentMoniker": "TallinnaRakenduslikKolledz\\Controllers\\CoursesController.cs",
-              "ToolTip": "C:\\Users\\Siim\\source\\repos\\tTallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\Users\\Siim\\Documents\\GitHub\\TallinnaRakenduslikKolledz_Siim\\TallinnaRakenduslikKolledz\\Controllers\\CoursesController.cs",
               "RelativeToolTip": "TallinnaRakenduslikKolledz\\Controllers\\CoursesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
