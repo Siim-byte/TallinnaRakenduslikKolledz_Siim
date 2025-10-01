@@ -13,7 +13,7 @@
 
 	<thead>
 		<tr>
-			<th> @Html.DisplayNameFor(model => model.CourseID)</th>
+			<th> @Html.DisplayNameFor(model => model.ID)</th>
 			<th> @Html.DisplayNameFor(model => model.Title)</th>
 			<th> @Html.DisplayNameFor(model => model.Credits)</th>
 			<th> @Html.DisplayNameFor(model => model.Department.Name)</th>
@@ -26,7 +26,7 @@
 		@foreach (var course in Model)
 		{
 			<tr>
-				@Html.DisplayFor(modelItem => course.CourseID)
+				@Html.DisplayFor(modelItem => course.ID)
 			</tr>
 			<tr>
 				@Html.DisplayFor(modelItem => course.Title)
@@ -41,9 +41,9 @@
 				@Html.DisplayFor(modelItem => course.Department.Administrator.FullName)
 			</tr>
 			<tr>
-				<a asp-action="Edit" asp-route-id="@course.CourseID">Muuda</a>
-				<a asp-action="Details" asp-route-id="@course.CourseID">Vaata</a>
-				<a asp-action="Delete" asp-route-id="@course.CourseID">Kustuta</a>
+				<a asp-action="Edit" asp-route-id="@course.ID">Muuda</a>
+				<a asp-action="Details" asp-route-id="@course.ID">Vaata</a>
+				<a asp-action="Delete" asp-route-id="@course.ID">Kustuta</a>
 			</tr>
 
 		}

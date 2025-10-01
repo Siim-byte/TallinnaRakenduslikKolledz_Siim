@@ -43,7 +43,7 @@ else if (ViewBag.action == "Details")
 	</dl>
 	@if (ViewBag.action == "Delete")
 	{
-		<form asp-action="Delete">
+		<form asp-action="DeleteConfirmed">
 			<input type="hidden" asp-for="DepartmentID" />
 			<input type="hidden" asp-for="RowVersion" />
 			<input type="submit" value="Kustuta" class="btn btn-danger" /> <a asp-action="Index">Tühista</a>

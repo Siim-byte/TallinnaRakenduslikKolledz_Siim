@@ -68,10 +68,11 @@ else if (ViewBag.action == "Edit")
 			}
 			else if (ViewBag.action == "Edit")
 			{
-				<div class="form-group">
-					<input type="submit" value="Sisesta" class="btn btn-primary" /> | 	<a asp-action="Index"
-					 class="btn btn-danger">Tühista Muutmine</a>
-				</div>
+				<form asp-action="EditConfirmed">
+					<input type="hidden" asp-for="DepartmentID" />
+					<input type="hidden" asp-for="RowVersion" />
+					<input type="submit" value="Kustuta" class="btn btn-danger" /> <a asp-action="Index">Tühista</a>
+				</form>
 			}
 
 		</form>

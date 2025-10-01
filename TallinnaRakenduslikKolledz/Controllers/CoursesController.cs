@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TallinnaRakenduslikKolledz.Data;
-using TallinnaRakenduslikKolledz.Data;
 using TallinnaRakenduslikKolledz.Models;
 
 namespace TallinnaRakenduslikKolllež.Controllers
@@ -19,6 +18,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
         {
             var courses = _context.Courses.Include(c => c.Department)
                 .AsNoTracking();
+            Console.WriteLine(courses);
             return View(courses);
         }
         [HttpGet]
@@ -33,7 +33,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
         {
             if (ModelState.IsValid)
             {
-                 _context.Add(course);
+                 _context.Courses.Add(course);
                 await _context.SaveChangesAsync();
                 PopulateDepartmentsDropDownList(course.DepartmentID);
             }
@@ -50,7 +50,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
             var courses = await _context.Courses
                 .Include(c => c.Department)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.CourseID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (courses == null)
             {
                 return NotFound();
