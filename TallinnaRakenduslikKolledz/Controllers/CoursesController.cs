@@ -24,21 +24,51 @@ namespace TallinnaRakenduslikKolllež.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["action"] = "Create";
             PopulateDepartmentsDropDownList();
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Course course)
+        public async Task<IActionResult> Create([Bind("Title,Credits,Department,DepartmentID,Enrollments,CourseAssignments")]Course courses)
         {
+            ViewData["action"] = "Create";
             if (ModelState.IsValid)
             {
-                 _context.Courses.Add(course);
+                 _context.Courses.Add(courses);
                 await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
                 //PopulateDepartmentsDropDownList(course.DepartmentID);
             }
-            return RedirectToAction("Index");
+            return View(courses);
 
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var courses = await _context.Courses.FirstOrDefaultAsync(x => x.ID == id);
+            if (courses == null)
+            {
+                return NotFound();
+            }
+            ViewData["action"] = "Edit";
+            return View("Create", courses);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditConfirmed(int id, [Bind("ID,Title,Credits,Department,DepartmentID,Enrollments,CourseAssignments")] Course courses)
+        {
+            if (!ModelState.IsValid)
+            {
+                _context.Courses.Update(courses);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(courses);
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
@@ -47,24 +77,24 @@ namespace TallinnaRakenduslikKolllež.Controllers
             {
                 return NotFound();
             }
-            var course = await _context.Courses.FirstOrDefaultAsync(m => m.ID == id);
-            if (course == null)
+            var courses = await _context.Courses.FirstOrDefaultAsync(m => m.ID == id);
+            if (courses == null)
             {
                 return NotFound();
             }
             ViewBag.action = "Delete";
-            return View("Delete", course);
+            return View("Delete", courses);
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed (int id)
         {
-            var course = await _context.Courses.FindAsync(id);
-            if (course == null)
+            var courses = await _context.Courses.FindAsync(id);
+            if (courses == null)
             {
                 return NotFound();
             }
-            _context.Courses.Remove(course);
+            _context.Courses.Remove(courses);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -82,13 +112,13 @@ namespace TallinnaRakenduslikKolllež.Controllers
             {
                 return NotFound();
             }
-            var course = await _context.Courses.FirstOrDefaultAsync(m => m.ID == id);
-            if (course == null)
+            var courses = await _context.Courses.FirstOrDefaultAsync(m => m.ID == id);
+            if (courses == null)
             {
                 return NotFound();
             }
             ViewBag.action = "Details";
-            return View("Delete", course);
+            return View("Delete", courses);
         }
     }
 }
