@@ -43,33 +43,28 @@ namespace TallinnaRakenduslikKolllež.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Courses == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            var courses = await _context.Courses
-                .Include(c => c.Department)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (courses == null)
+            var course = await _context.Courses.FirstOrDefaultAsync(m => m.ID == id);
+            if (course == null)
             {
                 return NotFound();
             }
-            return View(courses);
+            ViewBag.action = "Delete";
+            return View("Delete", course);
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed (int id)
         {
-            if (_context.Courses == null)
-            {
-                return NotFound();
-            }
             var course = await _context.Courses.FindAsync(id);
             if (course == null)
             {
-                _context.Courses.Remove(course);
+                return NotFound();
             }
+            _context.Courses.Remove(course);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -79,6 +74,21 @@ namespace TallinnaRakenduslikKolllež.Controllers
                                    orderby d.Name
                                    select d;
             ViewBag.DepartmentID = new SelectList(departmentsQuery.AsNoTracking(), "DepartmentID", "Name", selectedDepartment);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var course = await _context.Courses.FirstOrDefaultAsync(m => m.ID == id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+            ViewBag.action = "Details";
+            return View("Delete", course);
         }
     }
 }
