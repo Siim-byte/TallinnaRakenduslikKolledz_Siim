@@ -35,7 +35,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
             {
                  _context.Courses.Add(course);
                 await _context.SaveChangesAsync();
-                PopulateDepartmentsDropDownList(course.DepartmentID);
+                //PopulateDepartmentsDropDownList(course.DepartmentID);
             }
             return RedirectToAction("Index");
 

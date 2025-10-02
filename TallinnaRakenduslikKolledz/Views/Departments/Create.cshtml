@@ -4,21 +4,11 @@
 }
 @if (ViewBag.action == "Create")
 {
-		<P>
-			<h3>Loo osakond:</h3>
-		</P>
-}
-else if (ViewBag.action == "Edit")
-{
-		<p>
-			<h3>Muuda osakonda</h3>
-		</p>
-}
-
-<hr />
-<div class="row">
-	<div class="col-md-8">
-		<form asp-action="Create">
+    <p><h3>Loo osakond:</h3></p>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Create">
 
 			<input type="hidden" asp-for="RowVersion" value="@Html.Raw("0")" />
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -37,6 +27,11 @@ else if (ViewBag.action == "Edit")
 				<label asp-for="StartDate" class="control-label"></label>
 				<input asp-for="StartDate" class="control-label" />
 				<span asp-validation-for="StartDate" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="InstructorID" class="control-label"></label>
+				<input asp-for="InstructorID" class="control-label" />
+				<span asp-validation-for="InstructorID" class="text-danger"></span>
 			</div>
 			<div class="form-group">
 				<label asp-for="Administrator" class="control-label"></label>
@@ -59,21 +54,78 @@ else if (ViewBag.action == "Edit")
 				<input asp-for="Pet" class="control-label" />
 				<span asp-validation-for="Pet" class="text-danger"></span>
 			</div>
-			@if (ViewBag.action == "Create")
-			{
-					<div class="form-group">
-					<input type="submit" value="Create" class="btn btn-primary" /> | <a asp-action="Index" 
-					class="btn btn-danger">Tühista Loomine</a>
-					</div>
-			}
-			else if (ViewBag.action == "Edit")
-			{
-					<form asp-action="EditConfirmed">
-						<input type="hidden" asp-for="DepartmentID" />
-						<input type="hidden" asp-for="RowVersion" />
-						<input type="submit" value="Muuda" class="btn btn-danger" /> <a asp-action="Index">Tühista</a>
-					</form>
-			}
-		</form>
+				<div>
+					<input type="submit" value="Sisesta" class="btn btn-primary" />
+				</div>
+				<div>
+					<a asp-action="Index" class="btn btn-danger">Tühista lisamine</a>
+				</div>
+			</form>
+		</div>
 	</div>
+}
+else if (ViewBag.action == "Edit")
+{
+	<p>
+		<h3>Muuda osakonda</h3>
+	</p>
+	<hr />
+	<div class="row">
+		<div class="col-md-8">
+			<form asp-action="EditConfirmed">
+
+				<input type="hidden" asp-for="DepartmentID" />
+				<input type="hidden" asp-for="RowVersion" value="@Html.Raw("0")" />
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+				<div class="form-group">
+					<label asp-for="Name" class="control-label"></label>
+					<input asp-for="Name" class="control-label" />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Budget" class="control-label"></label>
+					<input asp-for="Budget" class="control-label" />
+					<span asp-validation-for="Budget" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="StartDate" class="control-label"></label>
+					<input asp-for="StartDate" class="control-label" />
+					<span asp-validation-for="StartDate" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="InstructorID" class="control-label"></label>
+					<input asp-for="InstructorID" class="control-label" />
+					<span asp-validation-for="InstructorID" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Administrator" class="control-label"></label>
+					<input asp-for="Administrator" class="control-label" />
+					<span asp-validation-for="Administrator" class="text-danger"></span>
+				</div>
+
+				<div class="form-group">
+					<label asp-for="Quota" class="control-label"></label>
+					<input asp-for="Quota" class="control-label" />
+					<span asp-validation-for="Quota" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="LeaderName" class="control-label"></label>
+					<input asp-for="LeaderName" class="control-label" />
+					<span asp-validation-for="LeaderName" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Pet" class="control-label"></label>
+					<input asp-for="Pet" class="control-label" />
+					<span asp-validation-for="Pet" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Sisesta" class="btn btn-primary" />
+				</div>
+			</form>
+		</div>
+	</div>
+}
+<div>
+	<a asp-action="Index">Mine tagasi loendisse</a>
 </div>

@@ -20,7 +20,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
             return View(await schoolContext.ToListAsync());
         }
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             ViewData["action"] = "Create";
             return View();
@@ -58,16 +58,20 @@ namespace TallinnaRakenduslikKolllež.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditConfirmed(int id, [Bind("DepartmentID,Name,Budget,StartDate,RowVersion,Administrator,Quota,LeaderName,Pet")] Department department)
         {
-            ViewData["action"] = "Edit";
+            //ViewBag.Edit = Edit(id);
+            
+            //if (id != department.DepartmentID)
+            //{
+            //    return NotFound();
+            //}
             if (ModelState.IsValid)
             {
-                var existing = await _context.Departments.FirstOrDefaultAsync(d => d.DepartmentID == id);
                 _context.Departments.Update(department);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
+                // return RedirectToAction(nameof(Index))
             }
-            ViewData["action"] = "Edit";
-            return View("Create", department);
+            return View(department);
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
