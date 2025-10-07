@@ -42,11 +42,14 @@
 }
 else if(ViewBag.action == "Edit")
 {
-	<h4>Sisesta uus info:</h4>
+	<p>
+		<h3>Muuda osakonda</h3>
+	</p>
 	<hr />
 	<div class="row">
-		<div class="col-md-4">
-			<form asp-action="Edit">
+		<div class="col-md-8">
+			<form asp-action="EditConfirmed">
+
 				<input type="hidden" asp-for="ID" />
 				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 				@*			<div>
@@ -54,14 +57,14 @@ else if(ViewBag.action == "Edit")
 				<input asp-for="ID" class="form-control"></input>
 				<span asp-validation-for="ID" class="text-danger"></span>
 			</div>@**@
-				<div>
+				<div class="form-group">
 					<label asp-for="Title" class="control-label"></label>
-					<input asp-for="Title" class="form-control"/>
+					<input asp-for="Title" class="control-label" />
 					<span asp-validation-for="Title" class="text-danger"></span>
 				</div>
-				<div>
+				<div class="form-group">
 					<label asp-for="Credits" class="control-label"></label>
-					<input asp-for="Credits" class="form-control"/>
+					<input asp-for="Credits" class="control-label" />
 					<span asp-validation-for="Credits" class="text-danger"></span>
 				</div>
 				<div>
@@ -72,7 +75,7 @@ else if(ViewBag.action == "Edit")
 					<span asp-validation-for="DepartmentID" class="text-danger"></span>
 				</div>
 				<div class="form-group">
-					<input type="submit" value="Sisesta" class="btn btn-primary" /> | <a asp-action="Index" class="btn btn-outline-primary">Tühista</a>
+					<input type="submit" value="Sisesta" class="btn btn-primary" />
 				</div>
 			</form>
 		</div>

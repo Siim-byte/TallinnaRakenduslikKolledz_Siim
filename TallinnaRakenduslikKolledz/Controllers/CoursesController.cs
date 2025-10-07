@@ -50,7 +50,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
             {
                 return NotFound();
             }
-            var courses = await _context.Courses.FirstOrDefaultAsync(x => x.ID == id);
+            var courses = await _context.Courses.FirstOrDefaultAsync(r => r.ID == id);
             if (courses == null)
             {
                 return NotFound();
@@ -62,7 +62,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditConfirmed(int id, [Bind("ID,Title,Credits,Department,DepartmentID,Enrollments,CourseAssignments")] Course courses)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Courses.Update(courses);
                 await _context.SaveChangesAsync();
