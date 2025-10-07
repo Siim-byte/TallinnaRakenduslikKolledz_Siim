@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TallinnaRakenduslikKolledz.Models.Delinquent>
+
+@{
+	ViewData["Title"] = "Pahalased";
+}
+
+<h2>Pahalased</h2>
+<p>
+	<a asp-action="Create">Tee uus Pahalane</a>
+</p>
+
+<table class="table">
+
+	<thead>
+		<tr>
+			<th> @Html.DisplayNameFor(model => model.Id)</th>
+			<th> @Html.DisplayNameFor(model => model.Eesnimi)</th>
+			<th> @Html.DisplayNameFor(model => model.Perekonnanimi)</th>
+			<th> @Html.DisplayNameFor(model => model.CurrentViolation)</th>
+			<th>Tööriistad</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var delinquent in Model)
+		{
+			<tr>
+				<th>
+					@Html.DisplayFor(modelItem => delinquent.Id)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => delinquent.Eesnimi)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => delinquent.Perekonnanimi)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => delinquent.CurrentViolation)
+				</th>
+				<th>
+					<a asp-action="Edit" asp-route-id="@delinquent.Id">Muuda</a>
+					<a asp-action="Details" asp-route-id="@delinquent.Id">Vaata</a>
+					<a asp-action="Delete" asp-route-id="@delinquent.Id">Kustuta</a>
+				</th>
+			</tr>
+		}
+	</tbody>
+</table>
