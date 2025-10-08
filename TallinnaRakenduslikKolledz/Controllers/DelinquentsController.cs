@@ -6,11 +6,11 @@ using TallinnaRakenduslikKolledz.Models;
 
 namespace TallinnaRakenduslikKolledz.Controllers
 {
-    public class DelinquentController : Controller
+    public class DelinquentsController : Controller
     {
         private readonly SchoolContext _context;
 
-        public DelinquentController(SchoolContext context)
+        public DelinquentsController(SchoolContext context)
         {
             _context = context;
         }

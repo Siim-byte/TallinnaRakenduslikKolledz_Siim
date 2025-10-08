@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<TallinnaRakenduslikKolledz.Models.Delinquent>
 
 @{
-	ViewData["Title"] = "Pahalased";
+	ViewData["Title"] = "Kurjategija";
 }
 
-<h2>Pahalased</h2>
+<h2>Kurjategijad</h2>
 <p>
-	<a asp-action="Create">Tee uus Pahalane</a>
+	<a asp-action="Create">Tee uus Kurjategija</a>
 </p>
 
 <table class="table">
@@ -14,9 +14,12 @@
 	<thead>
 		<tr>
 			<th> @Html.DisplayNameFor(model => model.Id)</th>
-			<th> @Html.DisplayNameFor(model => model.Eesnimi)</th>
-			<th> @Html.DisplayNameFor(model => model.Perekonnanimi)</th>
+			<th> @Html.DisplayNameFor(model => model.FirstName)</th>
+			<th> @Html.DisplayNameFor(model => model.LastName)</th>
 			<th> @Html.DisplayNameFor(model => model.CurrentViolation)</th>
+			<th> @Html.DisplayNameFor(model => model.OnOpetaja)</th>
+			<th> @Html.DisplayNameFor(model => model.Description)</th>
+			<th> @Html.DisplayNameFor(model => model.Olukord)</th>
 			<th>Tööriistad</th>
 		</tr>
 	</thead>
@@ -24,24 +27,34 @@
 	<tbody>
 		@foreach (var delinquent in Model)
 		{
+			
 			<tr>
-				<th>
+				<td>
 					@Html.DisplayFor(modelItem => delinquent.Id)
-				</th>
-				<th>
-					@Html.DisplayFor(modelItem => delinquent.Eesnimi)
-				</th>
-				<th>
-					@Html.DisplayFor(modelItem => delinquent.Perekonnanimi)
-				</th>
-				<th>
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => delinquent.FirstName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => delinquent.LastName)
+				</td>
+				<td>
 					@Html.DisplayFor(modelItem => delinquent.CurrentViolation)
-				</th>
-				<th>
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => delinquent.OnOpetaja)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => delinquent.Description)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => delinquent.Olukord)
+				</td>
+				<td>
 					<a asp-action="Edit" asp-route-id="@delinquent.Id">Muuda</a>
 					<a asp-action="Details" asp-route-id="@delinquent.Id">Vaata</a>
 					<a asp-action="Delete" asp-route-id="@delinquent.Id">Kustuta</a>
-				</th>
+				</td>
 			</tr>
 		}
 	</tbody>
