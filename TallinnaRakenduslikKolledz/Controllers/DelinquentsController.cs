@@ -36,6 +36,20 @@ namespace TallinnaRakenduslikKolledz.Controllers
             }
             return View(delinquent);
         }
+        [HttpGet]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var delinquent = await _context.Delinquents.FirstOrDefaultAsync(c => c.Id == id);
+            if (delinquent == null)
+            {
+                return NotFound();
+            }
+            return View(delinquent);
+        }
         
     }
 }
