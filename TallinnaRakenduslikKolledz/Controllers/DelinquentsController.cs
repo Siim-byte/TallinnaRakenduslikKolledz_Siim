@@ -26,7 +26,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, Eesnimi, Perekonnanimi, CurrentViolation")] Delinquent delinquent)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,CurrentViolation,OnOpetaja,Description,Olukord")] Delinquent delinquent)
         {
             if (ModelState.IsValid)
             {
@@ -36,5 +36,6 @@ namespace TallinnaRakenduslikKolledz.Controllers
             }
             return View(delinquent);
         }
+        
     }
 }

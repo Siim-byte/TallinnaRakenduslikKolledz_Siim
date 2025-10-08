@@ -26,7 +26,7 @@ namespace TallinnaRakenduslikKolledz.Data
             modelBuilder.Entity<CourseAssignment>().ToTable("CourseAssignment");
             modelBuilder.Entity<OfficeAssignment>().ToTable("OfficeAssignment");
             modelBuilder.Entity<Department>().ToTable("Department");
-            modelBuilder.Entity<Delinquent>().ToTable("Delingquent");
+            modelBuilder.Entity<Delinquent>().ToTable("Delinquent");
         }
 
     }

@@ -23,9 +23,9 @@ namespace TallinnaRakenduslikKolledz.Models
         [Display( Name = "Kas on Õpetaja")]
         public bool? OnOpetaja { get; set; }
         [Display(Name = "Kirjeldus")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
         [Display(Name = "Olukord")]
-        public string Olukord {  get; set; }
+        public string? Olukord {  get; set; }
 
 
     }
