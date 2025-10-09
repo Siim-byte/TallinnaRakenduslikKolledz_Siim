@@ -40,6 +40,7 @@ namespace TallinnaRakenduslikKolllež.Controllers
                 return RedirectToAction("Index");
                 //PopulateDepartmentsDropDownList(course.DepartmentID);
             }
+            PopulateDepartmentsDropDownList();
             return View(courses);
 
         }
