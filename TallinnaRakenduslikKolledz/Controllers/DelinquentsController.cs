@@ -83,5 +83,29 @@ namespace TallinnaRakenduslikKolledz.Controllers
             }
             return View(delinquent);
         }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var delinquent = await _context.Delinquents.FirstOrDefaultAsync(m => m.Id == id);
+            if (delinquent == null)
+            {
+                return NotFound();
+            }
+            return View(delinquent);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var delinquent = await _context.Delinquents.FindAsync(id);
+            _context.Delinquents.Remove(delinquent);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     } 
 }
